@@ -91,10 +91,8 @@ resource "azurerm_virtual_machine" "catapp" {
   resource_group_name = azurerm_resource_group.myresourcegroup.name
   vm_size             = var.vm_size
 
-  tags = {
-    Billable = "true"
-    Department = "devops"
-  }
+  Billable = "true"
+  Department = "devops"
 
   network_interface_ids         = [azurerm_network_interface.catapp-nic.id]
   delete_os_disk_on_termination = "true"
@@ -141,10 +139,9 @@ resource "null_resource" "configure-cat-app" {
     azurerm_virtual_machine.catapp,
   ]
 
-  tags = {
-    Billable = "true"
-    Department = "devops"
-  }
+  
+  Billable = "true"
+  Department = "devops"
   # Terraform 0.11
   # triggers {
   #   build_number = "${timestamp()}"
