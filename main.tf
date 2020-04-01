@@ -91,7 +91,7 @@ resource "azurerm_virtual_machine" "catapp" {
   resource_group_name = azurerm_resource_group.myresourcegroup.name
   vm_size             = var.vm_size
 
-  defined_tags = {
+  tags = {
     Billable = "true"
     Department = "devops"
   }
@@ -141,7 +141,7 @@ resource "null_resource" "configure-cat-app" {
     azurerm_virtual_machine.catapp,
   ]
 
-  defined_tags = {
+  tags = {
     Billable = "true"
     Department = "devops"
   }
